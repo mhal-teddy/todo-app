@@ -1,0 +1,15 @@
+services:
+  web:
+   build:
+    context: ./docker
+    args:
+      - UID=1000
+      - GID=1000
+      - USER_NAME=myuser
+      - GROUP_NAME=mygroup
+   volumes:
+    - type: bind
+      source: ./
+      target: /app
+   ports:
+    - 3000:3000
