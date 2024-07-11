@@ -15,4 +15,4 @@ RUN groupadd -o -g ${GID} ${GROUP_NAME} && \
 USER ${USER_NAME}
 WORKDIR /app
 
-CMD ["node", "hello-world.js"]
+CMD ["node", "main.js"]
