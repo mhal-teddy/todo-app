@@ -10,6 +10,9 @@ services:
       - type: volume
         source: db_data
         target: /var/lib/mysql
+      - type: bind
+        source: ./src/backend/init.sql
+        target: /docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 1m30s
@@ -18,7 +21,7 @@ services:
       start_period: 30s
   app:
     build:
-      context: ./backend
+      context: ./src
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}

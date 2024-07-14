@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded');
+document.addEventListener('DOMContentLoaded', fetchTodos);
 
 function fetchTodos() {
-    fetch('http://app:3000/api/todos')
+    fetch('http://127.0.0.1:3000/api/todos')
     .then(response => response.json())
     .then(todos => {
         const todoList = document.getElementById('todo-list');
@@ -17,7 +17,7 @@ function fetchTodos() {
 const addBtn = document.getElementById('add-btn');
 addBtn.addEventListener('click', () => {
     const newTodo = document.getElementById('new-todo').value;
-    fetch('http://app:3000/api/todos', {
+    fetch('http://127.0.0.1:3000/api/todos', {
         method: 'POST',
         headers: {
             'ContentType': 'application/json'

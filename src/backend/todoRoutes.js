@@ -10,8 +10,10 @@ const routes = {
 
 const router = (req, res) => {
     const parsedUrl = url.parse(req.url, true);
-    const method = url.method;
+    const method = req.method;
     const routeKey = `${parsedUrl.pathname} ${method}`;
+
+    console.log(`RouteKey: ${routeKey}`);
 
     if (routes[routeKey]) {
         routes[routeKey](req, res);
