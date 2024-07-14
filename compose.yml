@@ -11,9 +11,7 @@ services:
         source: db_data
         target: /var/lib/mysql
   app:
-    image: node:22.4.0-bullseye-slim
-    working_dir:
-      /usr/src/app
+    build: ./backend
     ports:
       - "3000:3000"
     volumes:
@@ -22,6 +20,5 @@ services:
         target: /usr/src/app
     depends_on:
       - db
-    command: bash -c "node server.js"
 volumes:
   db_data:

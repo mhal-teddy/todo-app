@@ -1,0 +1,14 @@
+{
+    "name": "todo-app",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Simple todo app",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "mysql": "^2.18.1"
+    },
+    "type": "module"
+}
