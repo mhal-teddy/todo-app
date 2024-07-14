@@ -1,4 +1,4 @@
-import Todo from "./todo";
+import Todo from "./todo.js";
 
 const parseRequestBody = (req, callback) => {
     let body = '';
@@ -67,4 +67,4 @@ const deleteTodo = (req, res) => {
     });
 };
 
-module.exports = {getTodos, createTodo, updateTodo, deleteTodo};
+export {getTodos, createTodo, updateTodo, deleteTodo};

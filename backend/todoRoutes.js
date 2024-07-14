@@ -1,11 +1,11 @@
 import url from "node:url";
-import todoController from "./todoController";
+import {getTodos, createTodo, updateTodo, deleteTodo} from "./todoController.js";
 
 const routes = {
-    '/api/todos GET': todoController.getTodos,
-    '/api/todos POST': todoController.createTodo,
-    '/api/todos PUT': todoController.updateTodo,
-    '/api/todos DELETE': todoController.deleteTodo,
+    '/api/todos GET': getTodos,
+    '/api/todos POST': createTodo,
+    '/api/todos PUT': updateTodo,
+    '/api/todos DELETE': deleteTodo,
 };
 
 const router = (req, res) => {
@@ -23,4 +23,4 @@ const router = (req, res) => {
     }
 };
 
-module.exports = router;
+export default router;

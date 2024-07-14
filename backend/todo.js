@@ -1,4 +1,4 @@
-import db from "./mysql";
+import db from "./mysql.js";
 
 const Todo = {
     getAll: (callback) => {db.query("SELECT * FROM todos", callback);},
@@ -7,4 +7,4 @@ const Todo = {
     delete: (id, callback) => {db.query("DELETE FROM todos WHERE id = ?", [id], callback);},
 };
 
-module.exports = Todo;
+export default Todo;

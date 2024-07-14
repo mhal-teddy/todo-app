@@ -1,5 +1,5 @@
 import http from "node:http";
-import router from "./todoRoutes";
+import router from "./todoRoutes.js";
 
 const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');

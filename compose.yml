@@ -10,15 +10,22 @@ services:
       - type: volume
         source: db_data
         target: /var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
   app:
-    build: ./backend
+    build:
+      context: ./backend
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - "3000:3000"
-    volumes:
-      - type: bind
-        source: ./backend
-        target: /usr/src/app
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 volumes:
   db_data:
