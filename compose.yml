@@ -1,15 +1,27 @@
 services:
-  web:
-   build:
-    context: ./docker
-    args:
-      - UID=1000
-      - GID=1000
-      - USER_NAME=myuser
-      - GROUP_NAME=mygroup
-   volumes:
-    - type: bind
-      source: ./
-      target: /app
-   ports:
-    - 3000:3000
+  db:
+    image: mysql:9.0.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "3306:3306"
+    volumes:
+      - type: volume
+        source: db_data
+        target: /var/lib/mysql
+  app:
+    image: node:22.4.0-bullseye-slim
+    working_dir:
+      /usr/src/app
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./backend
+        target: /usr/src/app
+    depends_on:
+      - db
+    command: bash -c "node server.js"
+volumes:
+  db_data:
