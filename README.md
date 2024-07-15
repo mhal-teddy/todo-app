@@ -3,9 +3,8 @@ This repository contains a simple Todo application built with Node.js, MySQL, an
 The application demonstrates basic CRUD operations and serves as an example of a full-stack development project.
 
 <p align="center">
-  <img "https://github.com/mhal-teddy/todo-app/blob/main/images/todolist.png" alt="todo-app-image" width="50%" height="50%">
+  <img src="images/todolist.png" alt="todo-app-image" width="50%" height="50%">
 </p>
-
 
 ## Features
 
