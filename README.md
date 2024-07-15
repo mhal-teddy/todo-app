@@ -1,4 +1,22 @@
-# todo-app
+# Todo App
+This repository contains a simple Todo application built with Node.js, MySQL, and Docker.   
+The application demonstrates basic CRUD operations and serves as an example of a full-stack development project.
+
+<p align="center">
+  <img src="https://github.com/mhal-teddy/todo-app/tree/main/images/todolist.png">
+</p>
+
+
+## Features
+
+- **Create**: Add new Todo items.
+- **Read**: Display a list of all Todo items.
+- **Update**: Modify existing Todo items.
+- **Delete**: Remove Todo items.
+- **Frontend**: Simple user interface using HTML, CSS, and JavaScript.
+- **Backend**: RESTful API using Node.js and MySQL.
+- **Docker**: Containerized application for easy setup and deployment.
+
 ## Build
 ### Prerequisites
 - Docker
