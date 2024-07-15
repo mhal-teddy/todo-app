@@ -38,4 +38,4 @@ Clone the repository to your local machine:
 
 ### Notes
 - The MySQL data is stored in a Docker volume names `db_data`.
-- The Node.js application source code is mounted as a bind volume from the `./backend` directory to `/usr/src/app` in the container.
+- The Node.js application source code is copied from the `./src` directory to `/usr/src/app` in the container.
