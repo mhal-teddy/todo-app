@@ -3,7 +3,7 @@ body {
     text-align: center;
 }
 
-#app {
+#container {
     max-width: 500;
     margin: 0 auto;
     padding: 20px;
@@ -12,4 +12,17 @@ body {
 input, button {
     padding: 10px;
     margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
 }
